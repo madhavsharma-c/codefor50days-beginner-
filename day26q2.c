@@ -33,7 +33,7 @@ Pattern with stars spaced irregularly as shown.
 int main() {
     int i;
     for (i = 1; i <= 13; i++) {
-        printf("* ");
+        printf("* \n");
     }
     return 0;
 }

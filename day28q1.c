@@ -1,41 +1,40 @@
-//Q56: Read and print elements of a one-dimensional array.
+/*Q55: Write a program to print all the prime numbers from 1 to n.
 
-/*
+
 Sample Test Cases:
 Input 1:
-3
-10 20 30
+10
 Output 1:
-10 20 30
+2 3 5 7
 
 Input 2:
-5
-1 2 3 4 5
+20
 Output 2:
-1 2 3 4 5
+2 3 5 7 11 13 17 19
 
 */
 #include <stdio.h>
 
 int main() {
-    int n, i;
+    int n, i, j, isPrime;
 
-   
-    printf("Enter number of elements: ");
+    printf("Enter the value of n: ");
     scanf("%d", &n);
 
-    int arr[n]; 
-    printf("Enter %d elements:\n", n);
-    for (i = 0; i < n; i++) {
-        scanf("%d", &arr[i]);
-    }
+    printf("Prime numbers from 1 to %d are:\n", n);
 
-   
-    printf("You entered:\n");
-    for (i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
+    for (i = 2; i <= n; i++) {
+        isPrime = 1; 
+        for (j = 2; j <= i / 2; j++) {
+            if (i % j == 0) {
+                isPrime = 0; 
+                break;
+            }
+        }
+        if (isPrime == 1) {
+            printf("%d ", i);
+        }
     }
 
     return 0;
 }
-

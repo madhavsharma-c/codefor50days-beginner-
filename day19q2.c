@@ -11,7 +11,7 @@ Input 2:
 999
 Output 2:
 27
-
+    
 */
 #include<stdio.h>
 int main()
