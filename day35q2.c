@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void reverse(int a[], int l, int r) {
+    while (l < r) {
+        int t = a[l];
+        a[l]=a[r];
+        a[r]=t;
+        l++;
+        r--;
+    }
+}
+
+int main() {
+    int n, k;
+    scanf("%d", &n);
+
+    int *a = (int *)malloc(n * sizeof(int));
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+    scanf("%d", &k);
+
+    if (n > 0) {
+        k %= n;
+        reverse(a,0,n - 1);  
+        reverse(a, 0,k - 1);  
+        reverse(a, k,n - 1);   
+    }
+
+    for (int i = 0; i < n; i++) {
+        printf("%d", a[i]);
+        if (i + 1 < n) printf(" ");
+    }
+    printf("\n");
+
+    free(a);
+    return 0;
+}
