@@ -10,23 +10,25 @@ Output 1:
 6 15
 
 */
-#include <stdio.h>
-
-int main() {
-    int rows, cols;
-    scanf("%d %d", &rows, &cols);
-    int matrix[rows][cols], rowSum[rows];
-
-    for(int i=0; i<rows; i++) {
-        rowSum[i] = 0;
-        for(int j=0; j<cols; j++) {
-            scanf("%d", &matrix[i][j]);
-            rowSum[i] += matrix[i][j];
+#include<stdio.h>
+int main(){
+    int row , col;
+    printf("enter the nummber of rows and columns in the array");
+    scanf("%d %d", & row, &col);
+    int sum[row];
+    int arr[row][col];
+    printf("enter the elements of the array");
+    for (int i =0; i<row; i++){
+        sum[i]=0;
+        for (int k =0;k< col; k++){
+            scanf("%d", &arr[i][k]);
+            sum[i]=sum[i]+arr[i][k];
         }
     }
+    for (int j=0;j<row ;j++){
+        printf("%d \n " , sum[j]);
 
-    for(int i=0; i<rows; i++)
-        printf("Row %d sum = %d\n", i+1, rowSum[i]);
+    }
+return 0;
 
-    return 0;
 }

@@ -8,24 +8,28 @@ Output 1:
 Vowels=2, Consonants=3
 
 */
+
+
+
 #include <stdio.h>
-#include <ctype.h>
 
 int main() {
     char str[100];
-    int vowels=0, consonants=0;
-    printf("Enter a string: ");
+    int con=0, vowels=0;
+    printf("enter the string :\n");
     fgets(str, sizeof(str), stdin);
 
-    for(int i=0; str[i]!='\0'; i++) {
-        char ch = tolower(str[i]);
-        if(ch>='a' && ch<='z') {
-            if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
-                vowels++;
-            else
-                consonants++;
+    for (int i =0; str[i]!='\0'; i++){
+        if (str[i]>='A' && str[i]<='Z'){
+            str[i]+=32;
+
         }
+        if (str[i]=='a'||str[i]=='e'||str[i]=='i'||str[i]=='o'||str[i]=='u'){
+        vowels++;}
+        else{ con++;}
     }
-    printf("Vowels: %d, Consonants: %d\n", vowels, consonants);
-    return 0;
-}
+       printf("Vowels:\t%d",vowels);
+       printf("Constonants:\t%d", con);
+       return 0; 
+
+    }

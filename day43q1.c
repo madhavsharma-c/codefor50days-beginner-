@@ -8,20 +8,18 @@ Output 1:
 dcba
 
 */
-#include <stdio.h>
-#include <string.h>
-
-int main() {
+#include<stdio.h>
+#include<string.h>
+int main()
+{
     char str[100];
-    printf("Enter a string: ");
+    printf("enter the string :\n");
     fgets(str, sizeof(str), stdin);
-
-    int len = strlen(str);
-    if(str[len-1]=='\n') len--; // remove newline
-
-    printf("Reversed string: ");
-    for(int i=len-1; i>=0; i--)
+    int len=strlen(str);
+    for (int i= len-1; i>=0; i--){
         printf("%c", str[i]);
-    printf("\n");
+
+    }
     return 0;
+
 }

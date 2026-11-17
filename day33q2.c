@@ -12,40 +12,28 @@ Output 1:
 */
 #include <stdio.h>
 
-int main() {
-    int n, x;
+int main(){
+    int n; 
+    int arr[100];
+    printf("Enter the number of elements in the array\n");
     scanf("%d", &n);
-
-    int arr[n + 1]; 
-    for (int i = 0; i < n; i++) {
+    printf("Enter the elements one by one in sorted manner\n");
+    for (int i=0; i<n; i++){
         scanf("%d", &arr[i]);
     }
-
-    scanf("%d", &x);
-
-    
-    int pos = n;
-    for (int i = 0; i < n; i++) {
-        if (arr[i] > x) {
-            pos = i;
-            break;
+    printf("enter the element to be inserted\n");
+    int element;
+    scanf("%d", &element);
+    printf("enter the position at which this element is to be inserted");
+    int pos=0;
+    scanf("%d", &pos);
+    for (int i=n ; i>=pos; i--){
+        arr[i+1]=arr[i];
         }
-    }
-
-    
-    for (int i = n; i > pos; i--) {
-        arr[i] = arr[i - 1];
-    }
-
-  
-    arr[pos] = x;
-    n++;
-
-   
-    for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-
-    return 0;
+        arr[pos]=element;
+        printf("Array after insertion:\n");
+        for (int i=0; i<=n; i++){
+            printf("%d ", arr[i]);
+        }
+return 0;
 }

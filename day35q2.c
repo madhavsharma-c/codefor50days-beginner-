@@ -1,39 +1,43 @@
-#include <stdio.h>
-#include <stdlib.h>
+//Q70: Rotate an array to the right by k positions.
 
-void reverse(int a[], int l, int r) {
-    while (l < r) {
-        int t = a[l];
-        a[l]=a[r];
-        a[r]=t;
-        l++;
-        r--;
-    }
-}
+/*
+Sample Test Cases:
+Input 1:
+5
+1 2 3 4 5
+2
+Output 1:
+4 5 1 2 3
 
-int main() {
-    int n, k;
+*/
+#include<stdio.h>
+int main(){
+    int n;
+    printf("enter the number of elements in the array:\n");
     scanf("%d", &n);
+    int array[n];
+    printf("enter the elements of the array");
+    for (int i=0; i<n; i++)
+        scanf("%d", &array[i]);
+        printf("enter the number of positions to rotate the array:\n");
+        int k;
+        scanf("%d", &k);
+        for (int i=0; i<k; i++)
+        {
+            int last = array[n-1];
+            for (int j = n-1; j > 0; j--)
+            {
+                array[j] = array[j-1];
+            }
+            array[0] = last;
+        }
+      
 
-    int *a = (int *)malloc(n * sizeof(int));
-    for (int i = 0; i < n; i++) {
-        scanf("%d", &a[i]);
-    }
-    scanf("%d", &k);
 
-    if (n > 0) {
-        k %= n;
-        reverse(a,0,n - 1);  
-        reverse(a, 0,k - 1);  
-        reverse(a, k,n - 1);   
-    }
+        printf("The rotated array is:\n");
+        for (int i=0; i<n; i++)             
+            printf("%d ", array[i]);
 
-    for (int i = 0; i < n; i++) {
-        printf("%d", a[i]);
-        if (i + 1 < n) printf(" ");
-    }
-    printf("\n");
+            return 0;
 
-    free(a);
-    return 0;
 }

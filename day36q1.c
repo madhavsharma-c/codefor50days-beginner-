@@ -11,24 +11,31 @@ Output 1:
 3 4
 
 */
-#include <stdio.h>
+#include<stdio.h>
 
-int main() {
-    int rows, cols;
-    printf("Enter rows and columns: ");
-    scanf("%d %d", &rows, &cols);
-
-    int matrix[rows][cols];
-    printf("Enter elements:\n");
-    for(int i=0; i<rows; i++)
-        for(int j=0; j<cols; j++)
-            scanf("%d", &matrix[i][j]);
-
-    printf("Matrix:\n");
-    for(int i=0; i<rows; i++) {
-        for(int j=0; j<cols; j++)
-            printf("%d ", matrix[i][j]);
-        printf("\n");
+int read( int matrix[100][100]){
+int rows, columns;
+printf("enter the number of rows and columns in the matrix respectively:\n");
+scanf("%d %d", &rows, &columns);
+printf("enter the elements of the matrix:\n");
+    for (int i=0; i<rows; i++){
+    for (int j =0; j<columns; j++){
+        scanf("%d", &matrix[i][j]); 
     }
+}
+        
+        
+        for (int i=0; i<rows; i++)
+{   
+    for (int j =0; j<columns; j++){
+        printf("%d ", matrix[i][j]);   }
+        printf("\n");
+}
+}
+
+
+int main(){
+    int arr[100][100];
+    read(arr);
     return 0;
 }

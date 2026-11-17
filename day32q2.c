@@ -13,27 +13,26 @@ Output 2:
 7
 
 */
-#include <stdio.h>
-
-int main() {
-    long long n;
-    int freq[10] = {0};  
-    int digit, maxDigit, maxFreq = 0;
-
-    printf("Enter an integer number: ");
-    scanf("%lld", &n);
-    while (n != 0) {
-        digit = n % 10;
-        freq[digit]++;
-        n /= 10;
+#include<stdio.h>
+int main(){
+    long long int theNumber;
+    int digit;
+   int frequency[10] = {0};
+    printf("Enter the number\n");
+    scanf("%lld", &theNumber);
+    while(theNumber!=0){
+        digit= theNumber%10;
+        frequency[digit]++;
+        theNumber=theNumber/10;
     }
-    for (int i = 0; i < 10; i++) {
-        if (freq[i] > maxFreq) {
-            maxFreq = freq[i];
-            maxDigit = i;
+    int maxCount = 0, ans = 0;
+    for (int d = 0; d <= 9; d++) {
+        if (frequency[d] > maxCount) {   // strict > keeps the smaller digit on ties
+            maxCount = frequency[d];
+            ans = d;
         }
     }
-    printf("The digit that occurs the most times is: %d\n", maxDigit);
-
+    printf("The maximum appearing integer is :%d\n", ans);
     return 0;
+    
 }

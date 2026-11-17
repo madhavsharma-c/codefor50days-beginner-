@@ -12,24 +12,25 @@ Positive=2, Negative=2, Zero=1
 #include<stdio.h>
 int main()
 {
-int n, i, pcount=0, ncount=0, zcount=0;
-int arr[100];
-printf("enter the number of elements:\n");
-    scanf("%d",&n);
-    for(i=0; i<=n; i++)
-    {
+    int n, i, pos=0, neg=0, zero=0;
+    int arr[100];
+    printf("enter the number of elements: ");
+    scanf("%d", &n);
+    printf("enter the elements:");
+    for (i=0; i<n; i++){
         scanf("%d", &arr[i]);
-        if (arr[i]>0)
-        {
-            pcount++;
-        }else if (arr[i]<0)
-        {
-            ncount++;
-
-        }else {
-            zcount++;
-        }
     }
-    printf("positive=%d,\n negative=%d,\n zero=%d,\n", pcount, ncount, zcount);
-    return 0;
-}
+    for (int j=0; j<n;j++){
+        if (arr[j]>0){
+            pos++;
+        }
+        else if (arr[j]<0){
+            neg++;
+        }
+        else{
+            zero++;
+        }
+        }
+        printf("Positive=%d\n Negative=%d\n Zero=%d", pos, neg, zero);
+    }
+    

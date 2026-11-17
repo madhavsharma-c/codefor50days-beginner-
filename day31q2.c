@@ -9,24 +9,25 @@ Output 1:
 4 3 2 1
 
 */
-#include <stdio.h>
-int main() {
-    int n, i, temp;
-    printf("Enter size of array: ");
-    scanf("%d", &n);
-
-    int arr[n];
-    printf("Enter %d elements:\n", n);
-    for (i = 0; i < n; i++) {
+#include<stdio.h>
+int main()
+{
+    int n,i, temp;
+    int arr[100];
+    printf("enter the number of elements :");
+    scanf("%d",&n);
+    printf("enter the elements");
+    for (i =0; i<n; i++){
         scanf("%d", &arr[i]);
     }
-    for (i = 0; i < n / 2; i++) {
-        temp = arr[i];
-        arr[i] = arr[n - i - 1];
-        arr[n - i - 1] = temp;
+    for (int j=0; j<n/2; j++){
+        temp = arr[j];
+        arr[j] = arr[n-j-1];
+        arr[n-j-1] = temp;
     }
-    printf("Reversed array:\n");
-    for (i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
+    for (int k=0; k<n; k++){
+        printf("%d", arr[k]);
     }
-    return 0;}
+    return 0;
+
+    }

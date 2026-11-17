@@ -12,14 +12,15 @@ i
 #include <stdio.h>
 
 int main() {
-    char str[100];
-    printf("Enter a string: ");
-    fgets(str, sizeof(str), stdin);
+    char ch[100];
+    printf("enter the string :\n");
+    fgets(ch, sizeof(ch), stdin);
 
-    printf("Here are your characters one by one:\n");
-    for(int i=0; str[i] != '\0'; i++)
-        if(str[i] != '\n')
-            printf("%c\n", str[i]);
-
+    for (int i =0; ch[i]!='\0'; i++){
+        if (ch[i]!='\n'){
+            printf("%c\n", ch[i]);
+        }
+    }
     return 0;
 }
+
